@@ -214,31 +214,49 @@
             <div id="jsResults" class="col s12 resultsDiv">
 
 
-                <!-- below is dummy data used for testing the CSS. It can be deleted at any time. steph japs 4/29/18
+                <!-- below is dummy data used for testing the CSS. It can be deleted at any time. steph japs 4/29/18 -->
                 <table>
                     <tr>
                         <th>Firstname</th>
                         <th>Lastname</th>
-                        <th>Age</th>
+                        <th>Modal Window</th>
                     </tr>
                     <tr>
                         <td>Jill</td>
                         <td>Smith</td>
-                        <td>50</td>
+                        <td>
+                            <!-- Modal Trigger -->
+                            <a class="waves-effect waves-light btn modal-trigger green" href="#modal1">
+                                    <i class="material-icons dp48">image</i>
+                                    <span>View location</span>
+                            </a>
+                        </td>
                     </tr>
                     <tr>
                         <td>Eve</td>
                         <td>Jackson</td>
-                        <td>94</td>
+                        <td>
+                            <!-- Modal Trigger -->
+                            <a class="waves-effect waves-light btn modal-trigger green" href="#modal1">
+                                    <i class="material-icons dp48">image</i>
+                                    <span>View location</span>
+                            </a>
+                        </td>
                     </tr>
                     <tr>
                         <td>Bob</td>
                         <td>Davidson</td>
-                        <td>33</td>
+                        <td>
+                            <!-- Modal Trigger -->
+                            <a class="waves-effect waves-light btn modal-trigger green" href="#modal1">
+                                    <i class="material-icons dp48">image</i>
+                                    <span>View location</span>
+                            </a>
+                        </td>
                     </tr>
-             
+
                 </table>
-                -->
+
 
 
             </div>
@@ -278,6 +296,21 @@
 
 
 
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">
+                <i class="material-icons dp48">close</i>
+            </a>
+        </div>
+        <div class="modal-content center-align">
+            <img src="" alt="image goes here">
+        </div>
+
+    </div>
+
+
+
     <!-- JQUERY  -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -314,6 +347,13 @@
     </script>
 
     <script type="text/javascript" src="assets/javascript/project.js"></script>
+
+    <!-- Modal Window -->
+    <script>
+        $(document).ready(function () {
+            $('.modal').modal();
+        });
+    </script>
 
 </body>
 
