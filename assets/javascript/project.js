@@ -1,19 +1,30 @@
-function loadData() {
-    var $address = $('#address');
-    var street = $('#street').val();
-    var city = $('#city').val();
-    var address = street + ',' + city;
-  
-    $address.text("Address: " + address + "");
-  
-    var streetViewURL = "https://maps.googleapis.com/maps/api/streetview?size=600x400&location=" + address + '';
-  
-    $('#photo').attr("src", streetViewURL);
-  
-    return false;
-  }
-  
-  $('#form-container').submit(loadData);
+function loadData(){
+  var $address = $('#address');
+  var street = $('#street').val();
+  var city = $('#city').val();
+  var address = street + ',' + city;
+
+  $address.text("Address: " + address + "");
+
+  var streetViewURL = "https://maps.googleapis.com/maps/api/streetview?size=600x400&location=" + address + '&key=AIzaSyBjs2MJp6REK0q4qkuENY_D78R4jZVr4OI';
+  $.ajax({
+      url: streetViewURL,
+      method: "GET"
+  })
+  .then(function(response){
+      
+      // console.log(response);
+      console.log(streetViewURL);
+
+  $('#photo').attr("src" , streetViewURL);
+
+  })
+
+  return false;
+}
+
+$('#form-container').submit(loadData);
+
   
   
   /**
