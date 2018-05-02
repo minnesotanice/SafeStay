@@ -284,6 +284,28 @@
     <!-- Compiled and minified JavaScript for Materialize -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 
+
+    <!-- javascript for form validation that Andrew will need to put in the project.js document -->
+    <script>
+        $("#submitCityState").on("click", function (event) {
+            var city = $("#jsCity").val();
+            var state = $("#jsState option:checked").find(":selected").text();
+
+            console.log(city);
+            console.log(state);
+
+            $("#jsCity").val("");
+            $("#jsState option selected").val("");
+        });
+
+        $("#submitZipcode").on("click", function (event) {
+
+            var zipcode = $("#jsZipcode").val();
+
+            console.log(zipcode);
+        });
+    </script>
+
     <script type="text/javascript" src="assets/javascript/project.js"></script>
 
 </body>
