@@ -207,6 +207,34 @@
 
     <section class="container">
 
+    <!-- ***************************************************************************
+    Area that displays the API data requested. Needs to be put into a table form
+    *************************************************************************** -->
+
+        <!-- This row will handle all of the retrieved articles -->
+        <div class="row">
+            <div class="col-sm-12">
+                <br>
+
+                <!-- This panel will initially be made up of a panel and wells for each of the articles retrieved -->
+                <div class="panel panel-primary">
+
+                    <!-- Panel Heading for the retrieved articles box -->
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <strong>
+                                <i class="fa fa-table"></i> Alternative Fuel Stations</strong>
+                        </h3>
+                    </div>
+
+                    <!-- This main panel will hold each of the resulting articles -->
+                    <div class="panel-body" id="well-section">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <!--   MAIN CONTENT   -->
         <div class="row">
 
@@ -234,15 +262,16 @@
                 -->
                 <table>
                     <tr>
-                        <th>Firstname</th>
-                        <th>Lastname</th>
+                        <th>Fuel Type</th>
+                        <th>Station Name</th>
+                        <th>Address</th>
                         <th>Modal Window</th>
                     </tr>
                     <tr>
-                        <td>Jill</td>
-                        <td>Smith</td>
+                        <td id="station-01">Jill</td>
+                        <td id="station-01">Smith</td>
+                        <td id="station-01">50</td>
                         <td>
-
                             <!-- Modal Trigger Demo -->
                             <a class="jsImageButton waves-effect waves-light btn modal-trigger green" href="#modal1" data-location-image="1301+Industrial+Blvd+NE+Minneapolis+MN"
                                 data-location-name="Holiday Stationstore #335">
@@ -252,10 +281,10 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Eve</td>
-                        <td>Jackson</td>
+                        <td id="station-02">Eve</td>
+                        <td id="station-02">Jackson</td>
+                        <td id="station-02">94</td>
                         <td>
-
                             <!-- Modal Trigger Demo -->
                             <a class="jsImageButton waves-effect waves-light btn modal-trigger green" href="#modal1" data-location-image="1301+Industrial+Blvd+NE+Minneapolis+MN"
                                 data-location-name="Holiday Stationstore #335">
@@ -265,10 +294,10 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Bob</td>
-                        <td>Davidson</td>
+                        <td id="station-03">Bob</td>
+                        <td id="station-03">Davidson</td>
+                        <td id="station-03">33</td>
                         <td>
-
                             <!-- Modal Trigger Demo -->
                             <a class="jsImageButton waves-effect waves-light btn modal-trigger green" href="#modal1" data-location-image="1301+Industrial+Blvd+NE+Minneapolis+MN"
                                 data-location-name="Holiday Stationstore #335">
@@ -343,9 +372,12 @@
     <!-- Compiled and minified JavaScript for Materialize -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 
+    <!-- Link to the project JavaScript file-->
+    <script type="text/javascript" src="assets/javascript/project.js"></script>
+    
 
     <!-- javascript for form validation that Andrew will need to put in the project.js document -->
-    <script>
+    <!-- <script>
         $("#run-city-state").on("click", function (event) {
             // can't do this with two submit buttons
             // event.preventDefault();
@@ -370,12 +402,12 @@
 
             $("#search-zipcode").val("");
         });
-    </script>
+    </script> -->
 
-    <script type="text/javascript" src="assets/javascript/project.js"></script>
+    
 
     <!-- Modal Window -->
-    <script>
+    <!-- <script>
         $(document).ready(function () {
             $('.modal').modal();
         });
@@ -406,7 +438,8 @@
             $("#jsCaption").text(imageAltParameter);
 
         });
-    </script>
+    </script> -->
+    
 
 </body>
 
