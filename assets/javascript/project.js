@@ -26,7 +26,21 @@ function loadData(){
 $('#form-container').submit(loadData);
 
   
-  
+
+
+ 
+function lettersOnly(input){
+  var regex = /[^a-z]/gi;
+  input.value = input.value.replace(regex, "");
+}
+
+
+function numbersOnly(input){
+  var regex = /[^0-9]/g;
+  input.value = input.value.replace(regex, "");
+}
+
+
   /**
    * pulls information from the form and build the query URL
    * @returns {string} URL for NYT API based on form inputs
