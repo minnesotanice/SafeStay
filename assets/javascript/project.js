@@ -25,20 +25,18 @@ function loadData(){
 
 $('#form-container').submit(loadData);
 
-  
-
-
- 
+//allows letters only for city input
 function lettersOnly(input){
   var regex = /[^a-z]/gi;
   input.value = input.value.replace(regex, "");
 }
 
-
+//allows numbers only for the zipcode input
 function numbersOnly(input){
   var regex = /[^0-9]/g;
   input.value = input.value.replace(regex, "");
 }
+  
 
 
 
@@ -56,6 +54,10 @@ function numbersOnly(input){
   
     // grab text the user typed into the zipcode search input, add as parameter to url
     var searchTerm = $("#search-zipcode").val().trim();
+    if (searchTerm===""){
+      alert("please enter zipcode");
+    }
+
     queryURL += "&location=" + searchTerm;
   
     // Logging the URL so we have access to it for troubleshooting
