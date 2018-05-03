@@ -214,35 +214,75 @@
             <div id="jsResults" class="col s12 resultsDiv">
 
 
-                <!-- below is dummy data used for testing the CSS. It can be deleted at any time. steph japs 4/29/18
+                <!-- below is dummy data used for testing the CSS. It can be deleted at any time. steph japs 4/29/18 -->
+                <!-- on second thought. don't delete this yet. sjaps 5/2/18 -->
+
+
+                <!-- 
+
+                // sample data from Fuel API results
+                "street_address": "1301 Industrial Blvd NE"
+                "city": "Minneapolis"
+                "state": "MN"
+                "station_name": "Holiday Stationstore #335"
+
+                // string that can be constructed with the above data
+
+                // this string will be used as an attribute named data-location
+                1301+Industrial+Blvd+NE+Minneapolis+MN
+
+                -->
                 <table>
                     <tr>
                         <th>Firstname</th>
                         <th>Lastname</th>
-                        <th>Age</th>
+                        <th>Modal Window</th>
                     </tr>
                     <tr>
                         <td>Jill</td>
                         <td>Smith</td>
-                        <td>50</td>
+                        <td>
+
+                            <!-- Modal Trigger Demo -->
+                            <a class="jsImageButton waves-effect waves-light btn modal-trigger green" href="#modal1" data-location-image="1301+Industrial+Blvd+NE+Minneapolis+MN"
+                                data-location-name="Holiday Stationstore #335">
+                                <i class="material-icons dp48">image</i>
+                                <span>View location</span>
+                            </a>
+                        </td>
                     </tr>
                     <tr>
                         <td>Eve</td>
                         <td>Jackson</td>
-                        <td>94</td>
+                        <td>
+
+                            <!-- Modal Trigger Demo -->
+                            <a class="jsImageButton waves-effect waves-light btn modal-trigger green" href="#modal1" data-location-image="1301+Industrial+Blvd+NE+Minneapolis+MN"
+                                data-location-name="Holiday Stationstore #335">
+                                <i class="material-icons dp48">image</i>
+                                <span>View location</span>
+                            </a>
+                        </td>
                     </tr>
                     <tr>
                         <td>Bob</td>
                         <td>Davidson</td>
-                        <td>33</td>
+                        <td>
+
+                            <!-- Modal Trigger Demo -->
+                            <a class="jsImageButton waves-effect waves-light btn modal-trigger green" href="#modal1" data-location-image="1301+Industrial+Blvd+NE+Minneapolis+MN"
+                                data-location-name="Holiday Stationstore #335">
+                                <i class="material-icons dp48">image</i>
+                                <span>View location</span>
+                            </a>
+                        </td>
                     </tr>
-             
+
                 </table>
-                -->
+
 
 
             </div>
-
 
 
             <!-- THE PROJECT CHANGED. WE NO LONGER HAVE 1 IMAGE FOR A RESULT SET. THERE WILL BE AN IMAGE ASSOCIATED WITH EACH OF THE MULTIPLE LOCATIONS IN THE RESULT SET. steph japs 4/29/18 -->
@@ -274,7 +314,26 @@
 
 
 
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
 
+        <div class="modal-footer">
+            <!-- link with close function -->
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">
+                <i class="material-icons dp48">close</i>
+            </a>
+        </div>
+
+        <div class="modal-content center-align">
+
+            <!-- caption for image -->
+            <h3 id="jsCaption" class="modalCaption"></h3>
+
+            <!-- image of location -->
+            <img id="jsImage" class="modalImage" src="" alt="">
+        </div>
+
+    </div>
 
 
 
@@ -314,6 +373,40 @@
     </script>
 
     <script type="text/javascript" src="assets/javascript/project.js"></script>
+
+    <!-- Modal Window -->
+    <script>
+        $(document).ready(function () {
+            $('.modal').modal();
+        });
+
+
+        // Click events for crystals
+        $("#jsResults").on("click", ".jsImageButton", function () {
+            // alert("clicked it");
+
+            var imageUrlBase = "https://maps.googleapis.com/maps/api/streetview?size=400x400&location=";
+
+            var imageUrlLocation = $(this).attr("data-location-image");
+
+            var imageUrlKey = "&key=AIzaSyBjs2MJp6REK0q4qkuENY_D78R4jZVr4OI";
+
+
+            // alt value for  image
+            var imageAltParameter = $(this).attr("data-location-name");
+            console.log("imageAltParameter is ", imageAltParameter);
+
+            // src value for image
+            var imageUrlFinal = imageUrlBase + imageUrlLocation + imageUrlKey;
+            console.log("imageUrlFinal is ", imageUrlFinal);
+
+            $("#jsImage").attr("src", imageUrlFinal);
+            $("#jsImage").attr("alt", imageAltParameter);
+
+            $("#jsCaption").text(imageAltParameter);
+
+        });
+    </script>
 
 </body>
 
