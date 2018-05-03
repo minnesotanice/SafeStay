@@ -76,6 +76,14 @@ h2.subtitle {
     -moz-border-radius: 0 0 15px 0;
 }
 
+/* MODAL WINDOW */
+.modalImage {
+    margin: 0 auto;
+}
+/* .modalCaption {
+    
+} */
+
 /* overwrite Materialize */
 
 .card {
