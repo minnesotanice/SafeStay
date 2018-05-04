@@ -50,8 +50,8 @@ function updatePage(AltFuelData) {
   // get from the form the number of results to display
   // api doesn't have a "limit" parameter, so we have to do this ourselves
   var numStations = 5
-  
-  // var numStations = $("#article-count").val();
+
+  // var numStations = $("#station-count").val();
 
   // log the AltFuelData to console, where it will show up as an object
   console.log(AltFuelData);
@@ -82,11 +82,10 @@ function updatePage(AltFuelData) {
       console.log(fuelType);
       console.log("------------------------------------");
 
-      $stationWell.append(
-        "<h3 class='articleHeadline'>" +
-        "<span class='label label-primary'>" + stationCount + "</span>" +
-        "<strong> " + station.fuel_type_code + "</strong></h3>"
-      );
+
+      //add data into html table
+      $("#well-section > tbody").append("<tr><td>" + fuelType + "</td><td>" + stationName + 
+      "</td><td>" + street + "<br>" + city + "," + "&nbsp;" + state + "&nbsp;" + zip + "</td><td>" + "Modal Button Goes Here" + "</td></tr>");
     }
 
     // if the station has a station_name, log and append to $stationWell
