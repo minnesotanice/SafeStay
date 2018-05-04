@@ -92,7 +92,9 @@
                             <div class="row">
                                 <div class="col s6">
                                     <label for="city">City </label>
+
                                     <input type="text" id="search-city" value="" type="text" onkeyup="lettersOnly(this)" required>
+
                                 </div>
                                 <!-- <div class="col s12 m6">
                                     <label for="state">State </label>
@@ -185,7 +187,10 @@
                         <div class="row">
                             <div class="col s12 m12">
                                 <label for="zipcode">Zipcode </label>
+
+
                                 <input type="text" id="search-zipcode" maxlength="5" minlength="5" type="number" onkeyup="numbersOnly(this)">
+
                             </div>
 
                         </div>
@@ -207,60 +212,16 @@
 
     <section class="container">
 
-        <!-- ***************************************************************************
+    <!-- ***************************************************************************
     Area that displays the API data requested. Needs to be put into a table form
     *************************************************************************** -->
 
-        <!-- This row will handle all of the retrieved articles -->
+
+        <!-- This row will handle all of the retrieved stations -->
         <div class="row">
-            <div class="col-sm-12">
-                <br>
-
-                <!-- This panel will initially be made up of a panel and wells for each of the articles retrieved -->
-                <div class="panel panel-primary">
-
-                    <!-- Panel Heading for the retrieved articles box -->
-                    <!-- <div class="panel-heading">
-                        <h3 class="panel-title">
-                            <strong>
-                                <i class="fa fa-table"></i> Alternative Fuel Stations</strong>
-                        </h3>
-                    </div> -->
-
-                    <!-- This main panel will hold each of the resulting articles -->
-                    <div class="panel-body" id="well-section">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <!--   MAIN CONTENT   -->
-        <div class="row">
-
-            <!-- Hey Andrew! Your results will go inside the #jsResults div below. I assume you will be creating a table with js. -->
-            <div id="jsResults" class="col s12 resultsDiv">
-
-
-                <!-- below is dummy data used for testing the CSS. It can be deleted at any time. steph japs 4/29/18 -->
-                <!-- on second thought. don't delete this yet. sjaps 5/2/18 -->
-
-
-                <!-- 
-
-                // sample data from Fuel API results
-                "street_address": "1301 Industrial Blvd NE"
-                "city": "Minneapolis"
-                "state": "MN"
-                "station_name": "Holiday Stationstore #335"
-
-                // string that can be constructed with the above data
-
-                // this string will be used as an attribute named data-location
-                1301+Industrial+Blvd+NE+Minneapolis+MN
-
-                -->
-                <table class="centered">
+            <div class="col-sm-12 resultsDiv">
+                <!-- This main panel will hold each of the resulting stations -->
+                <table class="centered" id="well-section">
                     <thead>
                         <tr>
                             <th>Fuel Type</th>
@@ -270,79 +231,26 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td id="station-01">Jill</td>
-                            <td id="station-01">Smith</td>
-                            <td id="station-01">50</td>
-                            <td>
-                                <!-- Modal Trigger Demo -->
-                                <a class="jsImageButton waves-effect waves-light btn modal-trigger green" href="#modal1" data-location-image="1301+Industrial+Blvd+NE+Minneapolis+MN"
-                                    data-location-name="Holiday Stationstore #335">
-                                    <i class="material-icons dp48">image</i>
-                                    <span>View location</span>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td id="station-02">Eve</td>
-                            <td id="station-02">Jackson</td>
-                            <td id="station-02">94</td>
-                            <td>
-                                <!-- Modal Trigger Demo -->
-                                <a class="jsImageButton waves-effect waves-light btn modal-trigger green" href="#modal1" data-location-image="1301+Industrial+Blvd+NE+Minneapolis+MN"
-                                    data-location-name="Holiday Stationstore #335">
-                                    <i class="material-icons dp48">image</i>
-                                    <span>View location</span>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td id="station-03">Bob</td>
-                            <td id="station-03">Davidson</td>
-                            <td id="station-03">33</td>
-                            <td>
-                                <!-- Modal Trigger Demo -->
-                                <a class="jsImageButton waves-effect waves-light btn modal-trigger green" href="#modal1" data-location-image="1301+Industrial+Blvd+NE+Minneapolis+MN"
-                                    data-location-name="Holiday Stationstore #335">
-                                    <i class="material-icons dp48">image</i>
-                                    <span>View location</span>
-                                </a>
-                            </td>
-                        </tr>
+
+
                     </tbody>
                 </table>
 
-
-
             </div>
-
-
-            <!-- THE PROJECT CHANGED. WE NO LONGER HAVE 1 IMAGE FOR A RESULT SET. THERE WILL BE AN IMAGE ASSOCIATED WITH EACH OF THE MULTIPLE LOCATIONS IN THE RESULT SET. steph japs 4/29/18 -->
-            <!-- LEFT COLUMN -->
-            <!--                 
-                <div class="col s12 m7">
-                    <div class="icon-block">
-                        <h5 class="center">results column</h5>
-
-                        <p class="light">Results from Alternative Fuel Station API go here</p>
-                    </div>
-                </div> -->
-
-            <!-- RIGHT COLUMN -->
-            <!--                 
-                <div class="col s12 m5">
-                    <div class="icon-block">
-                        <h5 class="center">image column</h5>
-
-
-                        <img class="photo" id="photo">
-
-                    </div>
-                </div> -->
-
         </div>
 
     </section>
+
+
+    <!-- Modal Trigger Demo -->
+    <!-- <td>
+            <a class="jsImageButton waves-effect waves-light btn modal-trigger green" href="#modal1" data-location-image="1301+Industrial+Blvd+NE+Minneapolis+MN"
+                data-location-name="Holiday Stationstore #335">
+                <i class="material-icons dp48">image</i>
+                <span>View location</span>
+            </a>
+        </td> -->
+
 
 
 
