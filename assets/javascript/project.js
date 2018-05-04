@@ -176,8 +176,8 @@ $("#jsResults").on("click", ".jsImageButton", function () {
  */
 function loadData(){
   var $address = $('#address');
-  var street = $('#city').val();
-  var city = $('#state').val();
+  var street = $('#street').val();
+  var city = $('#city').val();
   var address = city + ',' + state;
 
   $address.text("Address: " + address + "");
