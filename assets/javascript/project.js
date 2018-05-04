@@ -25,16 +25,12 @@ function buildQueryURL() {
   return queryURL;
 }
 
-//allows only letters to be entered
 function lettersOnly(input){
   var regex = /[^a-z]/gi;
-  if (!/^[a-z] + $/.test(Name)){
-  }
-  
   input.value = input.value.replace(regex, "");
   
 }
-//alloed only numbers to be entered
+
 function numbersOnly(input){
   var regex = /[^0-9]/g;
   input.value = input.value.replace(regex, "");
@@ -225,7 +221,6 @@ $("#run-city-state").on("click", function (event) {
   // event.preventDefault();
 
   var city = $("#search-city").val();
-  //alerts if empty field submitted
   if (city===""){
     alert("please enter city name");
   }
@@ -246,9 +241,8 @@ $("#run-zip").on("click", function (event) {
   // event.preventDefault();
 
   var zipcode = $("#search-zipcode").val();
-    
-  //alerts if empty field submitted
   if (zipcode===""){
+    
     alert("please enter zipcode");
 }
   console.log("zipcode is: ", zipcode);
